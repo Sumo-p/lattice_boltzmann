@@ -1,0 +1,37 @@
+&fixed_input
+obs_folder = './'
+obs_file = 'fibmb96.dat'
+nx = 96
+ny = 96
+nz = 96
+boundary_cond = 4
+boundary_width = 1
+/
+
+&variable_input
+folder = 'output/'
+gr_out_file = 'tag'
+
+init_cond = -4
+inv_fluid = 11
+inv_type = 1
+
+n_iteration = 20000
+n_sci_start = 0
+
+sci_fluxz = .true.
+n_sci_fluxz = 100
+
+sci_profile = .true.
+n_sci_profile = 100
+
+fr = 1.000005
+pr = 0.99995
+/
+
+&lbe_input
+n_checkpoint = 1000
+collisiontype = 'MRT'
+tau_r = 0.8
+taubulk_r = 0.84
+/
